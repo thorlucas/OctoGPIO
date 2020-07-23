@@ -1,0 +1,4 @@
+include README.md
+recursive-include OctoGPIO/templates *
+recursive-include OctoGPIO/translations *
+recursive-include OctoGPIO/static *

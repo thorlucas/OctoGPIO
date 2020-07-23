@@ -1,0 +1,11 @@
+<div class="control-group">
+	<div class="controls">
+		<div data-bind="foreach: settings.settings.plugins.octogpio.switches">
+			<button
+				class="btn btn-block"
+				data-bind="text: name, click: $parent.switch"
+				style="margin-bottom: 5px">
+			</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<form class="form-horizontal">
+	<div class="row-fluid">
+		<div class="span4 offset2">
+			<h4>Name</h4>
+		</div>
+		<div class="span2">
+			<h4>Pin</h4>
+		</div>
+	</div>
+	<div data-bind="foreach: settings.settings.plugins.octogpio.switches">
+		<div class="row-fluid" style="margin-bottom: 5px">
+			<div class="span4 offset2">
+				<input 
+					type="text" 
+					class="input-block-level" 
+					data-bind="value: name"/>
+			</div>
+			<div class="span2">
+				<input
+					type="number"
+					class="input-block-level"
+					min="0"
+					max="30"
+					data-bind="value: pin"/>
+			</div>
+			<div class="span2">
+				<a title="Remove Switch" class="btn btn-danger" data-bind="click: $parent.removeSwitch">
+					<i class="fa fa-trash-o"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="offset8 span2">
+			<a title="Add Switch" class="btn btn-primary" data-bind="click: addSwitch">
+				<i class="fa fa-plus"></i>
+			</a>
+		</div>
+	</div>
+</form>
