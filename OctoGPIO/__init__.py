@@ -89,7 +89,7 @@ class OctoGPIOPlugin(
         if command == "switch":
             self.switch(int(data["pin"]))
 
-    def switch(pin):
+    def switch(self, pin):
         self._logger.info("Switching %s", pin)
         if (self._hasGPIO):
             state = GPIO.input(pin)
