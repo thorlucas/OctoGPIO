@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 import octoprint.plugin
+import RPi.GPIO as GPIO
 
 class OctoGPIOPlugin(
     octoprint.plugin.StartupPlugin,
@@ -10,12 +11,13 @@ class OctoGPIOPlugin(
     octoprint.plugin.SimpleApiPlugin):
 
     def __init__(self):
-        try:
-            global GPIO
-            import RPi.GPIO as GPIO
-            self._hasGPIO = True
-        except (ImportError, RuntimeError):
-            self._hasGPIO = False
+        # try:
+            # global GPIO
+            # import RPi.GPIO as GPIO
+            # self._hasGPIO = True
+        # except (ImportError, RuntimeError):
+            # self._hasGPIO = False
+        self._hasGPIO = True
 
         if (self._hasGPIO):
             GPIO.setmode(GPIO.BCM)
